@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const expressWs = require('express-ws')(app);
 
+app.get("/", (req, res) => {
+
+    res.send("Hello World!");
+})
+
 app.ws('/chat/:id', function(ws, req) {
     const { id } = req.params
     console.log(id)
