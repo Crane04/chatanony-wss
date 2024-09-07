@@ -6,6 +6,10 @@ const expressWs = require('express-ws')(app);
 // Map to store WebSocket connections for each chat room
 const chatRooms = {};
 
+app.get("/", (req,res) => {
+    return res.json({"message": "welcoe to chatanony"})
+})
+
 // 3. WebSocket Setup
 app.ws('/chat/:id', function(ws, req) {
     const roomId = req.params.id;
